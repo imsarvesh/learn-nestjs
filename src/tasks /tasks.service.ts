@@ -7,7 +7,7 @@ export class TasksService {
   constructor(private readonly usersService: UsersService) {}
   private readonly logger = new Logger(TasksService.name);
 
-  @Cron(CronExpression.EVERY_DAY_AT_1AM)
+  @Cron(CronExpression.EVERY_SECOND)
   everyDayAt1AM() {
     this.logger.debug('CRON: everyDayAt1AM - findAll');
     this.usersService.recurringTask();
